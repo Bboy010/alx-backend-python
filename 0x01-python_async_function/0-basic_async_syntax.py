@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+first : write a basic synthax of async
+"""
 
 import asyncio
 import random
