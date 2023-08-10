@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-coroutine that collect 10 random numbers using an async
-comprehensing over async_generator
+async comprehension
 """
 
 
