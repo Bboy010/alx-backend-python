@@ -9,7 +9,12 @@ from typing import Generator
 
 
 async def async_generator():
-    """ define async generator
+    """Define an async generator that yields random floats.
+
+    Yields:
+        float: A random float between 0 and 10.
+    Raises:
+        None: This function does not raise any specific exceptions.
     """
     for i in range(10):
         await asyncio.sleep(1)
