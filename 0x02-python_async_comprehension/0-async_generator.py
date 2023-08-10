@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
-"""
-write a coroutine called async_generator that takes no arguments
-the coroutine will loop 10 times, each time asynchronously
-wait 1 second, then yield a random
-number between 0 and 10. Use the random module
+""" write a coroutine called async_generator that takes no arguments
 """
 
 
 import asyncio
 import random
-"""
-define async generator
+"""define async generator
 """
 
 
