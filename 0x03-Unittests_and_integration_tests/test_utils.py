@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Unittests parametrize and patch"""
 
-
 import unittest
 from unittest.mock import patch
 from parameterized import parameterized
@@ -39,8 +38,8 @@ class TestGetJson(unittest.TestCase):
     """TestGetJson class"""
 
     @parameterized.expand([
-        ("http://example.com", {"payload": True}),
-        ("http://holberton.io", {"payload": False})
+        ('http://example.com', {'payload': True}),
+        ('http://holberton.io', {'payload': False})
     ])
     def test_get_json(self, test_url, test_payload):
         """Test get json"""
@@ -51,6 +50,7 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
+    """Test memoize"""
 
     def test_memoize(self):
         """Test memoize"""
@@ -62,13 +62,13 @@ class TestMemoize(unittest.TestCase):
 
             @memoize
             def a_property(self):
-                """define property"""
+                """A property"""
                 return self.a_method()
 
         with patch.object(TestClass, 'a_method') as mock_method:
             test_class = TestClass()
-            test_class.a_property()
-            test_class.a_property()
+            test_class.a_property
+            test_class.a_property
             mock_method.assert_called_once()
 
 
