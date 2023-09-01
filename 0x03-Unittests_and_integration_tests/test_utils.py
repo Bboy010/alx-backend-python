@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Unittests for utils.py"""
+"""Unittests parametrize and patch"""
 
 
 import unittest
@@ -62,13 +62,13 @@ class TestMemoize(unittest.TestCase):
 
             @memoize
             def a_property(self):
-                """A property"""
+                """define property"""
                 return self.a_method()
 
         with patch.object(TestClass, 'a_method') as mock_method:
             test_class = TestClass()
-            test_class.a_property
-            test_class.a_property
+            test_class.a_property()
+            test_class.a_property()
             mock_method.assert_called_once()
 
 
