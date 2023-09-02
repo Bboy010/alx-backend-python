@@ -27,6 +27,17 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """tearDownClass method"""
         cls.get_patcher.stop()
 
+    def test_public_repos(self):
+        """test_public_repos method"""
+        test_class = GithubOrgClient("test")
+        self.assertEqual(test_class.public_repos(), self.expected_repos)
+
+    def test_public_repos_with_license(self):
+        """test_public_repos_with_license method"""
+        test_class = GithubOrgClient("test")
+        self.assertEqual(test_class.public_repos("apache-2.0"),
+                         self.apache2_repos)
+
 
 if __name__ == '__main__':
     unittest.main()
