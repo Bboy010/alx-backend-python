@@ -21,6 +21,14 @@ class TestGithubOrgClient(unittest.TestCase):
         test_class.org()
         mock_get_json.called_once(f'https://api.github.com/orgs/{org_name}')
 
+    @patch('client.GithubOrgClient._public_repos_url',
+           new_callable=PropertyMock)
+    def test_public_repos_url(self, mock_public_repos_url):
+        """test_public_repos_url method"""
+        mock_public_repos_url.return_value = "www.holberton.com"
+        test_class = GithubOrgClient("test")
+        self.assertEqual(test_class._public_repos_url, "www.holberton.com")
+
 
 if __name__ == '__main__':
     unittest.main()
